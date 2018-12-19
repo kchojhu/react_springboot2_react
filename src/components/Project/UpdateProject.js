@@ -3,6 +3,7 @@ import {createProject, getProject} from "../../actions/ProjectActions";
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import classnames from 'classnames';
+import {Link} from "react-router-dom";
 
 class UpdateProject extends Component {
 
@@ -15,10 +16,6 @@ class UpdateProject extends Component {
         endDate: "",
         errors: {}
     };
-
-    constructor(props, context) {
-        super(props, context);
-    }
 
     componentWillReceiveProps(nextProps) {
         const { id, projectName, projectIdentifier, description, startDate, endDate} = nextProps.project;
@@ -53,6 +50,9 @@ class UpdateProject extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-8 m-auto">
+                            <Link to={`/projectBoard/${this.state.projectIdentifier}`} className='btn btn-light'>
+                                Back to Project Board
+                            </Link>
                             <h5 className="display-4 text-center">Update Project form</h5>
                             <hr/>
                             <form onSubmit={this.onSubmit}>

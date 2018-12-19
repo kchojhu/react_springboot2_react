@@ -15,10 +15,6 @@ class AddProject extends Component {
         errors: {}
     };
 
-    constructor(props, context) {
-        super(props, context);
-    }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState(() => ({errors: nextProps.errors}));
