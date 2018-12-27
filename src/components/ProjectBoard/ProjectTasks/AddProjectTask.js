@@ -83,7 +83,7 @@ class AddProjectTask extends Component {
                                 <h6>Due Date</h6>
                                 <div className="form-group">
                                     <input type="date" className="form-control form-control-lg" name="dueDate"
-                                           value={this.state.dueDate} onChange={this.onChange}/>
+                                           value={this.state.dueDate ? this.state.dueDate : ""} onChange={this.onChange}/>
                                 </div>
                                 <div className="form-group">
                                     <select className="form-control form-control-lg" name="priority"

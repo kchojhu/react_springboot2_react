@@ -18,7 +18,6 @@ export default (state=initialState, action) => {
                 projectTask: action.payload
             };
         case DELETE_PROJECT_TASK:
-            // projectTasks: state.projects.filter(project => project.projectIdentifier != action.payload)
             return {
                 ...state,
                 projectTasks: state.projectTasks.filter(projectTask => projectTask.projectSequence !== action.payload)
